@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -18,7 +19,8 @@
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
     "vue-gtag": "^1.11.0",
-    "vue-typed-js": "^0.1.2"
+    "vue-typed-js": "^0.1.2",
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

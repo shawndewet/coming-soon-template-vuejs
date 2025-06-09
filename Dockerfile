@@ -16,17 +16,20 @@ COPY . .
 # Build the Vue app for production
 RUN npm run build
 
-# Use Nginx to serve the built app
-FROM nginx:alpine
+# Production image
+FROM node:20-alpine AS prod
+WORKDIR /app
 
 # Copy built files from build stage
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/server.js ./server.js
+COPY --from=build /app/package*.json ./
 
-# Copy custom Nginx config (optional)
-# COPY nginx.conf /etc/nginx/nginx.conf
+# Install production dependencies
+RUN npm install --omit=dev
 
-# Expose port 80
-EXPOSE 80
+# Expose port 3000
+EXPOSE 3000
 
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Node.js server
+CMD ["node", "server.js"]
