@@ -63,15 +63,12 @@ export default {
     return {
       logo: require("@/assets/logo.png"),
       backgroundImage: require("@/assets/bg.jpg"),
-      title: process.env.VUE_APP_TITLE,
-      disclaimer: [
-        process.env.VUE_APP_DISCLAIMER_FIRST_LINE,
-        process.env.VUE_APP_DISCLAIMER_SECOND_LINE,
-      ],
-      facebook: process.env.VUE_APP_FACEBOOK,
-      instagram: process.env.VUE_APP_INSTAGRAM,
-      youtube: process.env.VUE_APP_YOUTUBE,
-      linkedin: process.env.VUE_APP_LINKEDIN,
+      title: "Codewell Software",
+      disclaimer: ["Under Construction", "Check back soon"],
+      facebook: "",
+      instagram: "",
+      youtube: "",
+      linkedin: "https://www.linkedin.com/in/shawn-de-wet-b603044/",
     };
   },
 };
