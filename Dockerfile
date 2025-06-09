@@ -30,6 +30,7 @@ RUN npm install --omit=dev
 
 # Expose port 3000
 EXPOSE 3000
+LABEL service="codewell-web"
 
 # Start the Node.js server
 CMD ["node", "server.js"]
